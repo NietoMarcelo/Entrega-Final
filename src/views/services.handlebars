@@ -1,0 +1,36 @@
+<section>
+    <h2>Servicios</h2>
+    <p>Listado que viene de Mongo. Si creás uno desde acá o por la API, se suma solo sin recargar.</p>
+
+    <form id="create-service-form" class="card">
+        <h3>Nuevo servicio</h3>
+        <label>Nombre <input name="name" required></label>
+        <label>Descripción <input name="description" required></label>
+        <label>Precio <input name="price" type="number" min="1" required></label>
+        <label>Duración (min) <input name="duration" type="number" min="1" required></label>
+        <label>Categoría <input name="category" required></label>
+        <label class="check">
+            <input name="available" type="checkbox" checked>
+            Disponible
+        </label>
+        <button type="submit">Crear</button>
+        <p id="form-msg" class="msg"></p>
+    </form>
+
+    <div id="services-list" class="grid">
+        {{#if hasServices}}
+            {{#each services}}
+                <article class="card service-card" data-id="{{id}}">
+                    <h3>{{name}}</h3>
+                    <p>{{description}}</p>
+                    <p><strong>Duración:</strong> {{duration}} min</p>
+                    <p><strong>Precio:</strong> ${{price}}</p>
+                    <p><strong>Categoría:</strong> {{category}}</p>
+                    <p class="badge" data-available="{{availableAttr}}">{{availableText}}</p>
+                </article>
+            {{/each}}
+        {{else}}
+            <p id="empty-services">Todavía no hay servicios cargados.</p>
+        {{/if}}
+    </div>
+</section>

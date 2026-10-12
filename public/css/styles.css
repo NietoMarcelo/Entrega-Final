@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f1ea;
+    color: #222;
+}
+
+header {
+    background: #2f3e2f;
+    color: #fff;
+    padding: 16px 24px;
+}
+
+header h1 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+nav a {
+    color: #fff;
+    margin-right: 12px;
+}
+
+main {
+    padding: 24px;
+    max-width: 960px;
+}
+
+.grid {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 14px;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+form.card label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+form.card input {
+    width: 100%;
+    padding: 6px;
+    margin-top: 4px;
+}
+
+form.card .check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+form.card .check input {
+    width: auto;
+}
+
+button {
+    background: #2f3e2f;
+    color: #fff;
+    border: 0;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    background: #d9e8d2;
+}
+
+.badge[data-available="false"] {
+    background: #f0d2d2;
+}
+
+.msg {
+    min-height: 1.2em;
+    color: #6a2;
+}

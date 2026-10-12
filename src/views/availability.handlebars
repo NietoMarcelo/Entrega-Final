@@ -1,0 +1,42 @@
+<section>
+    <h2>Disponibilidad</h2>
+    <p>Acá se ve qué servicios están libres y las reservas que hay. El botón de disponibilidad pega contra la API y actualiza en vivo.</p>
+
+    <div id="availability-list" class="grid">
+        {{#if hasServices}}
+            {{#each services}}
+                <article class="card service-card" data-id="{{id}}">
+                    <h3>{{name}}</h3>
+                    <p>{{description}}</p>
+                    <p><strong>Duración:</strong> {{duration}} min</p>
+                    <p><strong>Precio:</strong> ${{price}}</p>
+                    <p><strong>Categoría:</strong> {{category}}</p>
+                    <p class="badge" data-available="{{availableAttr}}">{{availableText}}</p>
+                    <button class="toggle-available" data-id="{{id}}" data-available="{{availableAttr}}">
+                        Cambiar disponibilidad
+                    </button>
+                </article>
+            {{/each}}
+        {{else}}
+            <p id="empty-services">No hay servicios para mostrar.</p>
+        {{/if}}
+    </div>
+
+    <h3>Reservas</h3>
+    <div id="bookings-list" class="grid">
+        {{#if hasBookings}}
+            {{#each bookings}}
+                <article class="card booking-card" data-id="{{id}}">
+                    <p><strong>Cliente:</strong> {{clientName}}</p>
+                    <p><strong>Email:</strong> {{email}}</p>
+                    <p><strong>Fecha:</strong> {{dateText}}</p>
+                    <p><strong>Hora:</strong> {{time}}</p>
+                    <p><strong>Estado:</strong> {{status}}</p>
+                    <p><strong>Servicios en la reserva:</strong> {{servicesCount}}</p>
+                </article>
+            {{/each}}
+        {{else}}
+            <p id="empty-bookings">No hay reservas todavía.</p>
+        {{/if}}
+    </div>
+</section>
